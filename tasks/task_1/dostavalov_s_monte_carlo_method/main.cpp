@@ -1,8 +1,10 @@
 // Copyright 2023 Dostavalov Semen
 #include <gtest/gtest.h>
+#include <math.h>
+#include <boost/core/invoke_swap.hpp>
 #include <boost/mpi/environment.hpp>
 #include <boost/mpi/communicator.hpp>
-#include "task_1/dostavalov_s_monte_carlo_method/monte_carlo.h"
+#include "./monte_carlo.h"
 
 #define count 1000000
 #define err 0.1

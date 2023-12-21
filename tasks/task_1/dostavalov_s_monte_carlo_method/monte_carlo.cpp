@@ -1,7 +1,9 @@
 // Copyright 2023 Dostavalov Semen
-#include "task_1/dostavalov_s_monte_carlo_method/monte_carlo.h"
+#include "./monte_carlo.h"
 #include <mpi.h>
 #include <random>
+#include <functional>
+#include <cstdlib>
 
 
 double monteCarlo(int low, int high, int count, double (*f)(double)) {
