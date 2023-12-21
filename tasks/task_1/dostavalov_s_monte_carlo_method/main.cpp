@@ -4,28 +4,33 @@
 #include <boost/core/invoke_swap.hpp>
 #include <boost/mpi/environment.hpp>
 #include <boost/mpi/communicator.hpp>
-#include "./monte_carlo.h"
+#include "tasks/taks_1/dostavalov_s_monte_carlo_method/monte_carlo_method.h"
 
 #define count 1000000
 #define err 0.1
 
-double f1(double x){ 
-    return (pow(x, 2)); 
+double f1(double x) {
+    return (pow(x, 2));
 }
+
 double f2(double x) {
     return (1 / log(x));
 }
+
 double f3(double x) {
-    return (exp(x) / x); 
+    return (exp(x) / x);
 }
+
 double f4(double x) {
     return (log(x) + (5 * x));
 }
+
 double f5(double x) {
     return (exp(x) * pow(x, 2));
 }
 
-TEST(MPI_TESTS, Test_1){
+
+TEST(MPI_TESTS, Test_1) {
     bool flag = false;
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -115,10 +120,12 @@ int main(int argc, char** argv) {
     boost::mpi::communicator world;
 
     ::testing::InitGoogleTest(&argc, argv);
-    ::testing::TestEventListeners& listeners = ::testing::UnitTest::GetInstance()->listeners();
+    ::testing::TestEventListeners& listeners
+        = ::testing::UnitTest::GetInstance()->listeners();
 
     if (world.rank() != 0) {
         delete listeners.Release(listeners.default_result_printer());
     }
     return RUN_ALL_TESTS();
 }
+
