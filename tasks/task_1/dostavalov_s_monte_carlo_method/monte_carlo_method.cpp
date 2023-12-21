@@ -1,5 +1,5 @@
 // Copyright 2023 Dostavalov Semen
-#include "tasks/taks_1/dostavalov_s_monte_carlo_method/monte_carlo_method.h"
+#include "tasks/task_1/dostavalov_s_monte_carlo_method/monte_carlo_method.h"
 #include <mpi.h>
 #include <random>
 #include <functional>
@@ -47,3 +47,4 @@ double monteCarlo(int low, int high, int count, double (*f)(double)) {
     res = localSum;
     return res;
 }
+
