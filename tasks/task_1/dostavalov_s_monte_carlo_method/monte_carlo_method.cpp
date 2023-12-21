@@ -3,7 +3,7 @@
 #include <random>
 #include <functional>
 #include <cstdlib>
-#include "tasks/task_1/dostavalov_s_monte_carlo_method/monte_carlo_method.h"
+#include "task_1/dostavalov_s_monte_carlo_method/monte_carlo_method.h"
 
 
 double monteCarlo(int low, int high, int count, double (*f)(double)) {
